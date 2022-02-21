@@ -21,7 +21,6 @@ fetch(new Request("courses.json"))
                 courseList.push(item);
             }
             displayList(courseList);
-            displayList(allC);
         })
     .catch(console.error);
        
