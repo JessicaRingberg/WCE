@@ -1,7 +1,8 @@
-const courseList =[];
-let cart = JSON.parse(localStorage.getItem("CART")) || [];
-const newCourses = JSON.parse(localStorage.getItem("CO")) || [];
-showCart();
+// document.addEventListener("DOMContentLoaded", async () => {
+//     await fetchCourses();
+//     displayList(courseList);
+// });
+
 
 // class Kurs {
 //     constructor(input) {
@@ -12,21 +13,46 @@ showCart();
 //         this.imgSrc = input.imgSrc
 //     }
 // }
+
+//async function fetchCourses() {
+//     const json = await fetch("courses.json")
+//         .then(res => res.text());
+//     courseList = JSON.parse(json);
+// }
+
+
+
+
+
+
+let courseList = [];
+let cart = JSON.parse(localStorage.getItem("CART")) || [];
+showCart();
+
+
+
+
 //Get jsonobjects to javascript array
-fetch(new Request("courses.json")) 
-    .then((res) => res.json())
+    fetch(new Request("courses.json"))
+        .then((res) => res.json())
         .then((data) => {
             for (let i = 0; i < data.length; i++) {
                 const item = data[i];
                 courseList.push(item);
+               
             }
             displayList(courseList);
         })
     .catch(console.error);
+
        
-    
+   
+
+
 //Show elements from json in html
 function displayList(array) {
+
+    document.getElementById("createN").innerHTML = "";
 
     for (let i = 0; i < array.length; i++) {
         const course = array[i];
@@ -45,25 +71,31 @@ function displayList(array) {
   </div>`
         document.getElementById("createN").innerHTML += courseDisplay;
     }
-    //localStorage.setItem("COURSES", JSON.stringify(courseList));
-    //courseList.length = 0; 
+
 }  
+
+
 
 
 //Add course to array and display on site
 function addCourse() {
-    newCourses.push({
+  
+    courseList.push({
         id: document.getElementById("input-id").value,
         name: document.getElementById("input-name").value,
         description: document.getElementById("input-info").value,
         length: document.getElementById("input-length").value,
-        
+        imgSrc: "./images/f.png"
+    
     });
-    const allC = courseList.concat(newCourses);
+    //Get error not focusable..   document.getElementById("myForm").reset();
+    
     console.log(courseList);
-    localStorage.setItem("CO", JSON.stringify(newCourses));
+    displayList(courseList);
+    console.log(courseList);
 
 }
+
 
 
 // Add selected item to cart array
@@ -78,6 +110,7 @@ function addToCart(id) {
 }
 
 
+
 // display items from cart in html
 function showCart() {
     //Empty the html each time to avoid duplicates in cart display
@@ -87,8 +120,8 @@ function showCart() {
         const element = cart[i];
         let seen = `<li class="list-group-item justify-content-between align-items-center">
         <h5 onclick="deleteFromCart(${element.id})">
-        ${element.name} <i class="bi bi-trash3"></i> 
-        </h5>` //Align trashcans later
+        ${element.name}<i class="bi bi-trash3 ms-md-auto">
+        </i></h5><small>${element.description}</small>` //Align trashcans later
         document.getElementById("my-things").innerHTML += seen;
         
     }
@@ -96,6 +129,7 @@ function showCart() {
     localStorage.setItem("CART", JSON.stringify(cart));
 
 }
+
 
 
 //Delete selected item in cart
@@ -106,10 +140,11 @@ function deleteFromCart(id) {
 }
 
 
+
 //Display modal to thank for purchase or alert cart is empty
 function buyItems() {
     if (cart.length <= 0) {
-        document.getElementById("confirmed").innerHTML = "Din kundvagn är tom!";
+        document.getElementById("confirmed").innerHTML = "Din kundvagn innehåller inga varor!";
     }
     else if (cart.length > 0) {
         document.getElementById("confirmed").innerHTML = "Tack för ditt köp!";
