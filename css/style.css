@@ -82,9 +82,14 @@ ul {
 .banner {
   width: 100%;
 }
-footer {
+i,
+i:hover {
+  color: black;
+  cursor: pointer;
+}
+#footer {
   bottom: 0px;
-  padding-top: 2.5rem;
+  padding: 2.5rem;
   background-color: #c4dce9;
 }
 img {
