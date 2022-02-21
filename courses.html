@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Westcoast Education</title>
+  </head>
+
+  <body>
+    <header>
+      <a class="logo" href="index.html">
+        <img class="banner"src="images/sm.jpg" alt="Westcoast Education" />
+      </a>
+    </header>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-md navbar-light">
+      <div class="container-fluid">
+        <!--Button to navigate on small screens-->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-nav"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--Navigation links-->
+        <div class="collapse navbar-collapse" id="main-nav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Westcoast Education</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses.html">Kurser</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Om oss</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Kontakt</a>
+            </li>
+          </ul>
+          <ul class=
+          "navbar-nav ms-md-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Logga in</a>
+            </li>
+            <!--Dropdown to display cart items-->
+            <li class="nav-item">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDarkDropdownMenuLink"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Kundvagn
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDarkDropdownMenuLink"
+              >
+                <h6>Artiklar:</h6>
+                  <ul class="list-group list-group-flush" id="my-things"></ul>
+                    <!-- Cart item display -->
+                    <!--Lägg till modal till knappen för att confirma köp-->
+                    <button 
+                      type="button" 
+                      onclick="buyItems()" 
+                      class="btn btn-outline-success" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#modalMess"
+                    >
+                    <span><i class="bi bi-cart-check"></i></span>
+                  Köp
+                    </button>
+              </div>
+              <!--Modal to confirm purchase-->
+              <div class="modal" id="modalMess" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="confirmed"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="flex-container">
+      <section class="flex-item-left">
+        <div>
+                <button type="button" class="btn bg-warning" data-bs-toggle="modal" data-bs-target="#myModal">
+                    Lägg till kurs
+                </button>
+                <!--Modal to add course -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+        
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-secondary">
+                                <h4 class="modal-title">Lägg till ny kurs</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <!--Modal body-->
+                            <div class="modal-body bg-secondary">
+                                <!--Form in modal for submitting a new course-->
+                                <form id="myForm">
+                                    <div class="mb-3" id="submit-course">
+                                        <label for="input-id" class="form-label">Kurs-id</label>
+                                        <input id="input-id" name="kursen" type="text" class="form-control form-control-sm"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="input-name" class="form-label">Kursnamn</label>
+                                        <input id="input-name" name="kursen" type="text" class="form-control form-control-sm"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="input-length" class="form-label">Längd på kurs</label>
+                                        <input id="input-length" name="kursen" type="text" class="form-control form-control-sm"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="input-info" class="form-label">Kursbeskrivning</label>
+                                        <input id="input-info" name="kursen" type="text" class="form-control"></input>
+                                    </div>
+                                    <button onclick="addCourse()" type="submit" class="btn btn-primary">Lägg till</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </section>
+    <article class="main">
+        <h3>Alla våra kurser:</h3>
+        <div class="navbar-expand-md navbar-light">
+            <!--Button for small screen-->
+            <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#courses"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        > <!--Bild till knapp här-->
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <!--Course links-->
+            <div class="collapse navbar-collapse" id="courses">
+                <div class="row row-cols-1 row-cols-md-3 g-4" id="createN">
+                <!--Courses displays here-->
+                </div>
+                <div class="list-group"></div>
+                <ul id="all-courses"></ul>
+            </div>
+        </div>
+    </article>
+    </div>
+    <div>
+      <footer>
+      <p>hej</p>
+    </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="courses.json"></script>
+  </body>
+</html>

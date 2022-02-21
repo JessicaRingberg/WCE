@@ -1,0 +1,37 @@
+[
+        {
+            "id": "1",
+            "name": "C#",
+            "description": "Programmering med C#",
+            "length": "10 veckor",
+            "imgSrc": "./images/c.png"
+        },
+        {
+            "id": "2",
+            "name": "SQL",
+            "description": "Databashantering med SQL",
+            "length": "8 veckor",
+            "imgSrc": "./images/sql.png"
+        },
+        {
+            "id": "3",
+            "name": "JavaScript",
+            "description": "Programmering med Javascript",
+            "length": "12 veckor",
+            "imgSrc": "./images/js.png"
+        },
+        {
+            "id": "4",
+            "name": "CSS",
+            "description": "Styla hemsidor med hjälp av css",
+            "length": "4 veckor",
+            "imgSrc": "./images/css.png"
+        },
+        {
+            "id": "5",
+            "name": "HTML",
+            "description": "Skapa hemsidor med HTML",
+            "length": "7 veckor",
+            "imgSrc": "./images/html.png"
+        }
+]

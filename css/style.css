@@ -1,0 +1,97 @@
+@media (min-width: 768px) {
+  img {
+    width: 50%;
+  }
+  .main {
+    text-align: left;
+  }
+  .main h1 {
+    font-size: 80px;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #2f2a50;
+}
+
+.navbar,
+.navbar a {
+  background-color: #c4dce9;
+  font-weight: bold;
+  font-size: large;
+}
+
+.nav-item {
+  font-weight: bold;
+}
+.card-body {
+  background-color: #2f2a50;
+}
+
+.navbar a:hover {
+  color: #006630;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item-left {
+  flex: 20%;
+  padding: 1.5em;
+  color: #c4dce9;
+}
+
+.list-group a,
+a {
+  text-decoration: none;
+  color: #c4dce9;
+}
+
+.list-group a:hover,
+a:hover {
+  color: #006630;
+}
+
+.main {
+  flex: 80%;
+  padding: 1.5em;
+  padding-right: 10rem;
+  color: #c4dce9;
+}
+
+#startIntro {
+  font-size: 25px;
+}
+
+ul {
+  list-style: none;
+}
+
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+.banner {
+  width: 100%;
+}
+footer {
+  bottom: 0px;
+  padding-top: 2.5rem;
+  background-color: #c4dce9;
+}
+img {
+  width: 50%;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+}
