@@ -121,7 +121,7 @@
       <section class="flex-item-left">
         <div>
                 <button type="button" class="btn bg-warning" data-bs-toggle="modal" data-bs-target="#myModal">
-                    Lägg till kurs
+                    Ny kurs
                 </button>
                 <!--Modal to add course -->
                 <div class="modal" id="myModal">
@@ -136,7 +136,7 @@
                             <!--Modal body-->
                             <div class="modal-body">
                                 <!--Form in modal for submitting a new course-->
-                                <form id="myForm" onsubmit="return false">
+                                <form id="myForm">
                                     <div class="mb-3" id="submit-course">
                                         <label for="input-id" class="form-label">Kurs-id</label>
                                         <input id="input-id" name="kursen" type="text" class="form-control form-control-sm"
@@ -167,21 +167,10 @@
     <article class="main">
         <h3>Alla våra kurser:</h3>
         <div class="navbar-expand-md navbar-light">
-            <!--Button for small screen-->
-            <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#courses"
-          aria-controls="main-nav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        > <!--Bild till knapp här-->
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          
             <!--Course links-->
-            <div class="collapse navbar-collapse" id="courses">
-                <div class="row row-cols-1 row-cols-md-3 g-4" id="createN">
+            <div id="courses">
+                <div class="row row-cols-1 row-cols-md-4 g-4" id="show-cards">
                 <!--Courses displays here-->
                 </div>
                 <div class="list-group"></div>
