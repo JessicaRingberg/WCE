@@ -58,29 +58,32 @@
             <li class="nav-item">
               <a class="nav-link" href="index.html">Logga in</a>
             </li>
-            <!--Dropdown to display cart items-->
             <li class="nav-item">
               <a
-                class="nav-link"
-                href="#"
-                id="navbarDarkDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                class="openbtn nav-link" href="#"
+                onclick="openCart()"
               >
-                Kundvagn
-              </a>
-              <div
-                class="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDarkDropdownMenuLink"
-              >
-                <h6>Artiklar:</h6>
+               <i id="cart-logo" class="bi bi-cart3">
+                <span id="cart-counter" style="display:inline-flex;"></span>
+              </i>
+            </a>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="mySidepanel" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeCart()"
+        >&times;</a
+      >
+     <h6>Artiklar:</h6>
                 <ul class="list-group list-group-flush" id="my-things"></ul>
                 <!-- Cart item display -->
-                <button
+                <button id="courses-site"
                   type="button"
                   onclick="buyItems()"
-                  class="btn btn-outline-success"
+                  class="btn"
                   data-bs-toggle="modal"
                   data-bs-target="#modalMess"
                 >
@@ -103,8 +106,9 @@
                     </div>
                     <div class="modal-footer">
                       <button
+                      id="courses-site"
                         type="button"
-                        class="btn btn-secondary"
+                        class="btn"
                         data-bs-dismiss="modal"
                       >
                         Stäng
@@ -113,11 +117,7 @@
                   </div>
                 </div>
               </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    </div>
     <div class="flex-container">
       <section class="flex-item-left">
         <div class="d-grid gap-md-3">
@@ -149,6 +149,7 @@
           </div>
         </div>
       </section>
+
       <article class="main">
         <h1 id="startPageH">Vi har it-utbildningarna du söker!</h1>
         <p id="startIntro">
@@ -164,7 +165,7 @@
         <p>
           Gå gärna in och kika på de mest populära kurser vi erbjuder just nu!
         </p>
-        <a href="courses.html" class="btn btn-md btn-success"> Kursutbud </a>
+        <a href="courses.html" id="courses-site" class="btn btn-md"> Kursutbud </a>
       </article>
     </div>
     <div id="footer">

@@ -22,7 +22,7 @@ body {
   height: 100%;
   background-color: #2f2a50;
 }
-
+/* The menu */
 .navbar,
 .navbar a {
   background-color: #c4dce9;
@@ -66,11 +66,17 @@ a:hover {
   padding-right: 10rem;
   color: #c4dce9;
 }
-
+.card {
+  border: 4px solid #006630;
+}
 .card-body {
   background-color: #2f2a50;
 }
-
+#courses-site {
+  background-color: #006630;
+  border: 1px solid black;
+  color: #c4dce9;
+}
 img {
   width: 50%;
 }
@@ -91,7 +97,24 @@ ul {
 .banner {
   width: 100%;
 }
-
+/* Cart style */
+#cart-logo {
+  padding-left: 1rem;
+  padding-right: 1.7rem;
+  font-size: 1.4rem;
+}
+#cart-counter {
+  display: none;
+  position: absolute;
+  font-size: 17px;
+  border-radius: 50%;
+  background-color: #2f2a50;
+  height: 23px;
+  width: 23px;
+  justify-content: center;
+  color: #c4dce9;
+  transform: translate(-10px, -10px);
+}
 i,
 i:hover {
   color: black;
@@ -105,4 +128,27 @@ i:hover {
 .social-media {
   font-size: 1.5rem;
   padding-left: 2rem;
+}
+
+/* Cart container */
+.sidepanel {
+  height: 400px;
+  width: 0;
+  position: absolute;
+  z-index: 1;
+  top: 5;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: 0.7s;
+}
+
+/* The close button for cart container */
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 38px;
+  margin-left: 50px;
 }
