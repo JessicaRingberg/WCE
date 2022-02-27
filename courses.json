@@ -5,7 +5,7 @@
             "description": "Lär dig programmering med C#",
             "length": "10 veckor",
             "imgSrc": "./images/c.png",
-            "price": "3"
+            "price": "399"
         },
         {
             "id": "2",
@@ -13,7 +13,7 @@
             "description": "Databashantering med SQL",
             "length": "8 veckor",
             "imgSrc": "./images/sql.png",
-            "price": "3"
+            "price": "2499"
         },
         {
             "id": "3",
@@ -21,7 +21,7 @@
             "description": "Styla hemsidor med hjälp av css",
             "length": "4 veckor",
             "imgSrc": "./images/css.png",
-            "price": "3"
+            "price": "349"
         },
         {
             "id": "4",
@@ -29,6 +29,6 @@
             "description": "Skapa hemsidor med HTML",
             "length": "7 veckor",
             "imgSrc": "./images/html.png",
-            "price": "3"
+            "price": "699"
         }
 ]
