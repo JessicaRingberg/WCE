@@ -1,7 +1,7 @@
 //Array to hold courses from json file
 let jsonList = [];
 //Array to hold created courses
-let newCourse = JSON.parse(localStorage.getItem("x")) || [];
+let newCourse = JSON.parse(localStorage.getItem("SAVED")) || [];
 //array that holds all courses
 let coursesArray = [];
 //Array to hold items in cart
@@ -56,7 +56,7 @@ function displayList() {
         document.getElementById("show-cards").innerHTML += courseDisplay;
     }
     //Save to localstorage
-    localStorage.setItem("x", JSON.stringify(newCourse));
+    localStorage.setItem("SAVED", JSON.stringify(newCourse));
 
 }
 
