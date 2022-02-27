@@ -8,22 +8,21 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css" />
     <title>Westcoast Education</title>
   </head>
   <body>
     <header>
       <a class="logo" href="index.html">
-        <img class="banner" src="images/sm.jpg" alt="Westcoast Education" />
+        <img class="banner"src="images/sm.jpg" alt="Westcoast Education" />
       </a>
     </header>
+
     <!--Navigation bar-->
     <nav class="navbar navbar-expand-md navbar-light">
       <div class="container-fluid">
+
         <!--Button to navigate on small screens-->
         <button
           class="navbar-toggler"
@@ -36,13 +35,12 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <!--Navigation links-->
         <div class="collapse navbar-collapse" id="main-nav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" id="westcoast" href="index.html"
-                >Westcoast Education</a
-              >
+              <a class="nav-link" href="index.html">Westcoast Education</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="courses.html">Kurser</a>
@@ -54,43 +52,47 @@
               <a class="nav-link" href="index.html">Kontakt</a>
             </li>
           </ul>
-          <ul class="navbar-nav ms-md-auto">
+          <ul class=
+          "navbar-nav ms-md-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Logga in</a>
             </li>
-            <li class="nav-item">
+
+            <!-- Display cart items-->
+           <li class="nav-item">
               <a
                 class="openbtn nav-link" href="#"
                 onclick="openCart()"
               >
-               <i id="cart-logo" class="bi bi-cart3">
+              <i id="cart-logo" class="bi bi-cart3">
                 <span id="cart-counter" style="display:inline-flex;"></span>
               </i>
-            </a>
-
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div id="mySidepanel" class="sidepanel">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeCart()"
-        >&times;</a
-      >
-     <h6>Artiklar:</h6>
-                <ul class="list-group list-group-flush" id="my-things"></ul>
-                <!-- Cart item display -->
-                <button id="courses-site"
-                  type="button"
-                  onclick="buyItems()"
-                  class="btn"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modalMess"
-                >
-                  <span><i class="bi bi-cart-check"></i></span>
-                  Köp
-                </button>
-              </div>
+
+    <!--Cart content-->
+     <div id="mySidepanel" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a>
+      <h6>Artiklar:</h6>
+      <ul class="list-group list-group-flush" id="my-things"></ul><br>
+  
+      <!-- Cart item display -->
+      <br><h6>Total:</h6>
+      <p id="total-p"></p>
+      <button
+      id="courses-site"
+        type="button"
+        onclick="buyItems()"
+        class="btn"
+        data-bs-toggle="modal"
+        data-bs-target="#modalMess">
+        <span><i class="bi bi-cart-check"></i></span>Köp
+      </button>
+    </div>
               <!--Modal to confirm purchase-->
               <div class="modal" id="modalMess" tabindex="-1">
                 <div class="modal-dialog">
@@ -108,7 +110,7 @@
                       <button
                       id="courses-site"
                         type="button"
-                        class="btn"
+                        class="btn btn-secondary"
                         data-bs-dismiss="modal"
                       >
                         Stäng
